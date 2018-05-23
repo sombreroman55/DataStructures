@@ -14,18 +14,13 @@ class StackException : public std::runtime_error
         StackException(std::string msg) : std::runtime_error(msg) { }
 };
 
-// TODO: implement error classes for other data structure classes
-
-/*
-class QueueException
+class QueueException : public std::runtime_error 
 {
-    private:
-        std::string errormsg;
     public:
-        StackException(std::string msg) : errormsg(msg) { }
-        ~StackException() { }
-        void what() { std::cerr << errormsg << std::endl; }
+        QueueException() : std::runtime_error("") { }
+        QueueException(std::string msg) : std::runtime_error(msg) { }
 };
-*/
+
+// TODO: implement error classes for other data structure classes
 
 #endif
